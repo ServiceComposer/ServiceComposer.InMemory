@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Mauro Servienti</Authors>
+    <Description>Services ViewModel Composition</Description>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageIcon>ServiceComposer.png</PackageIcon>
+    <PackageTags>Services ViewModel Composition</PackageTags>
+	<PackageOutputPath>../../nugets</PackageOutputPath>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <NoWarn>$(NoWarn);NU5105</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+   <ItemGroup>
+    <None Include="..\..\assets\ServiceComposer.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
+	<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+	<PackageReference Include="Microsoft.Extensions.DependencyModel" Version="6.0.0" />
+	<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.2" />
+	<PackageReference Include="System.Reflection.Metadata" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MinVer" Version="4.2.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+  </ItemGroup>
+
+  <Target Name="AppVeyorPullRequestsTarget" AfterTargets="MinVer" Condition="'$(APPVEYOR_PULL_REQUEST_NUMBER)' != ''">
+    <PropertyGroup>
+      <PackageVersion>$(MinVerMajor).$(MinVerMinor).$(MinVerPatch)-pr.$(APPVEYOR_PULL_REQUEST_NUMBER).build-id.$(APPVEYOR_BUILD_ID).$(MinVerPreRelease)</PackageVersion>
+      <PackageVersion Condition="'$(MinVerBuildMetadata)' != ''">$(PackageVersion)+$(MinVerBuildMetadata)</PackageVersion>
+      <Version>$(PackageVersion)</Version>
+    </PropertyGroup>
+  </Target>
+
+</Project>

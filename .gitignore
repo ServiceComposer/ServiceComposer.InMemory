@@ -1,0 +1,34 @@
+# Platform data storage
+.db/
+.logs/
+
+# User-specific files
+*.suo
+*.user
+
+# mergetool output
+*.orig
+
+# API Approvals
+*.received.txt
+
+# Build dependencies and artifacts
+.dotnet/
+.build/
+.nugets/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+/nugets
+
+# Visual Studio cache/options directory
+.vs/
+
+# JetBrains cache/options directory
+.idea/
