@@ -4,6 +4,8 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceComposer.InMemory", "ServiceComposer.InMemory\ServiceComposer.InMemory.csproj", "{5D70C2D3-7F78-48E6-8EB9-BC8E85B850D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceComposer.InMemory.Tests", "ServiceComposer.InMemory.Tests\ServiceComposer.InMemory.Tests.csproj", "{576936D7-A7C4-40A7-B87B-E759B80C09DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,10 @@ Global
 		{5D70C2D3-7F78-48E6-8EB9-BC8E85B850D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D70C2D3-7F78-48E6-8EB9-BC8E85B850D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D70C2D3-7F78-48E6-8EB9-BC8E85B850D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{576936D7-A7C4-40A7-B87B-E759B80C09DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{576936D7-A7C4-40A7-B87B-E759B80C09DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{576936D7-A7C4-40A7-B87B-E759B80C09DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{576936D7-A7C4-40A7-B87B-E759B80C09DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
